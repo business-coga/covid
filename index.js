@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
@@ -12,11 +13,11 @@ const api = require('./src/api')
 app.use(morgan('dev'))
 
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  res.send('Server QLRR')
 })
  
 app.use('/api',api)
 
 app.listen(8081, ()=>{
-  console.log('Server on Port 8081')
+  console.log('Server on : http://127.0.0.1:8081')
 })
