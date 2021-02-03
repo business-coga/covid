@@ -14,8 +14,12 @@ KhaiBao.get('/', (req,res,next)=>{
 
     conn.query(query)
     .then(({rows})=>{
-        req.KhaiBao = rows
-        next()
+        if(rows.length == 0){
+            res.send([])
+        }else{
+            req.KhaiBao = rows
+            next()
+        }
     })
     .catch(err => res.send(err))
 }, async (req,res,next)=>{

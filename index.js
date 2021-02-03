@@ -18,6 +18,6 @@ app.get('/', function (req, res) {
  
 app.use('/api',api)
 
-app.listen(8081, ()=>{
-  console.log('Server on : http://127.0.0.1:8081')
+app.listen(process.env.PORT, ()=>{
+  console.log(`Server on : http://127.0.0.1:${process.env.PORT}`)
 })
